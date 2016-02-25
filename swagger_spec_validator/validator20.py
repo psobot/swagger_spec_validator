@@ -234,7 +234,9 @@ def validate_unresolvable_path_params(path_name, path_params):
     msg = "Path Parameter used is not defined"
     for path in get_path_params_from_url(path_name):
         if path not in path_params:
-            raise SwaggerValidationError("%s: %s (in path %s)" % (msg, path, path_name))
+            raise SwaggerValidationError("%s: %s (in path %s)" % (
+                msg, path, path_name
+            ))
 
 
 def is_ref(spec_dict):
